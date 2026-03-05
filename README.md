@@ -93,7 +93,7 @@ if self.use_aux_model:
 ```
 
 #### 4.2 The Core algorithms
-`verl/trainer/ppo/core_algos.py` 引入了支持双模型的损失计算逻辑（例如 `mapo_clip`）。它利用 `model_source` 标识区分模型来源，为 Actor 计算标准 PPO Loss，为 Aux 模型计算基于性能权重 (`performance`) 的加权 Loss，从而在单次更新中实现对两个模型的联合优化。
+verl/trainer/ppo/core_algos.py introduces loss calculation logic that supports dual models (e.g., mapo_clip). It uses model_source to distinguish the model origin, computing the standard PPO Loss for the Actor and a weighted Loss based on performance for the Aux model, thereby achieving joint optimization of both models in a single update step.
 
 ```python
 # verl/trainer/ppo/core_algos.py
