@@ -27,7 +27,7 @@ bash ./recipe/hacpo/run_qwen3-1.7b_qwen3-4b.sh
 
 ### 4. Detail of the repo
 #### 4.1 Train two agents together
-`verl/trainer/ppo/ray_trainer.py` 实现了同时训练 **Actor** 和 **Aux** 模型的功能。它通过独立的 Worker Group 管理 Aux 模型，支持为两者配置不同的 Tokenizer，并在数据流中处理 `aux_` 前缀的专用数据（如 `aux_input_ids`），从而在 Ray 框架下实现双模型的高效并行训练。
+verl/trainer/ppo/ray_trainer.py implements simultaneous training for both Actor and Aux models. It manages the Aux model through a separate Worker Group, supports configuring distinct Tokenizers for each, and processes dedicated data with the aux_ prefix (such as aux_input_ids) in the data pipeline, enabling efficient parallel training of dual models within the Ray framework.
 
 ```python
 # verl/trainer/ppo/ray_trainer.py
