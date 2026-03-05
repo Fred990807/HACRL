@@ -1,6 +1,6 @@
 # Heterogenous Agent Collaborative Reinforcement Learning
 
-This is an unofficial code implement. Paper link: https://arxiv.org/abs/2603.02604
+This is an unofficial code implement. Paper link: https://arxiv.org/abs/2603.02604.
 
 ## 1.Paper of this work.
 
