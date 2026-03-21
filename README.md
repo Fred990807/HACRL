@@ -2,13 +2,13 @@
 
 This is an unofficial code implement. Paper link: https://arxiv.org/abs/2603.02604.
 
+If you have any questions, feel free to open an issue or submit a Pull Request.
+
 ### 1.Paper of this work.
 
 All experiments from the paper *“Heterogenous Agent Collaborative Reinforcement Learning”* can be reproduced with this repo.
 
 Heterogenous Agent Collaborative Policy Optimization (HACPO) is an RLVR framework designed to facilitate the collaborative training of multiple heterogeneous agents on a common task.
-
-If you have any questions, feel free to open an issue or submit a Pull Request.
 
 ### 2. Quick Start
 #### 2.1 Installation
