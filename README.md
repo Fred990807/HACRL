@@ -2,16 +2,18 @@
 
 This is an unofficial code implement. Paper link: https://arxiv.org/abs/2603.02604.
 
-## 1.Paper of this work.
+### 1.Paper of this work.
 
 All experiments from the paper *“Heterogenous Agent Collaborative Reinforcement Learning”* can be reproduced with this repo.
 
 Heterogenous Agent Collaborative Policy Optimization (HACPO) is an RLVR framework designed to facilitate the collaborative training of multiple heterogeneous agents on a common task.
 
-### 3. Quick Start
-#### 3.1 Installation
+If you have any questions, feel free to open an issue or submit a Pull Request.
+
+### 2. Quick Start
+#### 2.1 Installation
 This repo use the same environment as verl, so you can find detailed setting on https://verl.readthedocs.io/en/latest/start/install.html.
-#### 3.2 Start
+#### 2.2 Start
 ```bash
 bash ./recipe/hacpo/run_qwen3-1.7b_qwen3-4b.sh
 # key parameter
@@ -25,8 +27,8 @@ bash ./recipe/hacpo/run_qwen3-1.7b_qwen3-4b.sh
 # actor_rollout_ref.actor.aux_clip_ratio_step: the step size used in stepwise clipping
 ```
 
-### 4. Detail of the repo
-#### 4.1 Train two agents together
+### 3. Detail of the repo
+#### 3.1 Train two agents together
 verl/trainer/ppo/ray_trainer.py implements simultaneous training for both Actor and Aux models. It manages the Aux model through a separate Worker Group, supports configuring distinct Tokenizers for each, and processes dedicated data with the aux_ prefix (such as aux_input_ids) in the data pipeline, enabling efficient parallel training of dual models within the Ray framework.
 
 ```python
@@ -92,7 +94,7 @@ if self.use_aux_model:
     aux_output = self.aux_model_wg.update_actor(batch)
 ```
 
-#### 4.2 The Core algorithms
+#### 3.2 The Core algorithms
 verl/trainer/ppo/core_algos.py introduces loss calculation logic that supports dual models (e.g., mapo_clip). It uses model_source to distinguish the model origin, computing the standard PPO Loss for the Actor and a weighted Loss based on performance for the Aux model, thereby achieving joint optimization of both models in a single update step.
 
 ```python
